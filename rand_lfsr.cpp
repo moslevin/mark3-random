@@ -11,13 +11,14 @@
 Copyright (c) 2014 m0slevin, all rights reserved.
 See license.txt for more information
 ===========================================================================*/
-/*!
-    \file rand_lfsr.cpp
-    \brief Linear Feedback Shift Register based Pseudo-Random Number Generator
+/**
+    @file rand_lfsr.cpp
+    @brief Linear Feedback Shift Register based Pseudo-Random Number Generator
 */
 
 #include "rand_lfsr.h"
-namespace Mark3 {
+namespace Mark3
+{
 //---------------------------------------------------------------------------
 #define POLY_MASK_32 0xB4BCD35C
 #define POLY_MASK_31 0x7A5BC2E3
@@ -54,4 +55,4 @@ uint32_t PseudoRandom::Shift(uint32_t* pu32LFSR_, uint32_t u32Mask_)
     }
     return *pu32LFSR_;
 }
-} //namespace Mark3
+} // namespace Mark3
