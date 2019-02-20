@@ -11,9 +11,9 @@
 Copyright (c) 2014 m0slevin, all rights reserved.
 See license.txt for more information
 ===========================================================================*/
-/*!
-    \file rand_lfsr.h
-    \brief Linear Feedback Shift Register based Pseudo-Random Number Generator
+/**
+    @file rand_lfsr.h
+    @brief Linear Feedback Shift Register based Pseudo-Random Number Generator
 */
 
 #pragma once
@@ -22,10 +22,9 @@ See license.txt for more information
 
 namespace Mark3
 {
-
 //---------------------------------------------------------------------------
-/*!
- * \brief The PseudoRandom class
+/**
+ * @brief The PseudoRandom class
  *
  * Pseudro-Random Number Generator based on a 32-bit linear-feedback
  * shift register.  For reference, the implementation is based on the
@@ -39,46 +38,46 @@ namespace Mark3
 class PseudoRandom
 {
 public:
-    /*!
-     * \brief PseudoRandom
+    /**
+     * @brief PseudoRandom
      *
      * Default constructor
      */
     PseudoRandom();
 
-    /*!
-     * \brief Seed
+    /**
+     * @brief Seed
      *
      * Initialize the LFSR registers in the object, seeding the random
      * number generator.
      *
-     * \param u32Seed1_ Seed value for LFSR register 1
-     * \param u32Seed2_ Seed value for LFSR register 2
+     * @param u32Seed1_ Seed value for LFSR register 1
+     * @param u32Seed2_ Seed value for LFSR register 2
      */
     void Seed(uint32_t u32Seed1_, uint32_t u32Seed2_);
 
-    /*!
-     * \brief GetRandom
+    /**
+     * @brief GetRandom
      *
      * Return a 16-bit random number.
      *
-     * \return 16-bit random number
+     * @return 16-bit random number
      */
     uint16_t GetRandom();
 
 private:
-    /*!
-     * \brief Shift
+    /**
+     * @brief Shift
      *
      * Deep magic to drive the the LFSR state machine
      *
-     * \param pu32LFSR_ Pointer to the register to drive
-     * \param u32Mask_ Bitmask to apply as an XOR
-     * \return new value in the LFSR register
+     * @param pu32LFSR_ Pointer to the register to drive
+     * @param u32Mask_ Bitmask to apply as an XOR
+     * @return new value in the LFSR register
      */
     uint32_t Shift(uint32_t* pu32LFSR_, uint32_t u32Mask_);
 
     uint32_t m_u32LFSR1;
     uint32_t m_u32LFSR2;
 };
-} //namespace Mark3
+} // namespace Mark3
